@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+.main{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(152, 241, 152);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    overflow: hidden;
+    height: 80%;
+    width: 80%;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.container-top{
+    height: 80px;
+    background-color: rgba(4, 95, 4, 0.76);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10%;
+    color: #fff;
+}
+
+.elem{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.box{
+    height: 40px;
+    width: 40px;
+    background-color: #fff;
+    color: rgba(38, 107, 38, 0.468);
+    font-weight: 600;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-btm{
+    height: calc(100% - 80px);
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.bubble{
+    height: 60px;
+    width: 60px;
+    background-color: rgba(25, 49, 25, 0.658);
+    border-radius:50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.bubble:hover{
+    cursor: pointer;
+    background-color: rgb(18, 171, 18);
+}
