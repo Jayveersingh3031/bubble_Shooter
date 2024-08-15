@@ -39,14 +39,17 @@ html,body{
     display: flex;
     align-items: center;
     gap: 20px;
+    font-size: 1vw;
 }
+
+
 .box{
     height: 40px;
     width: 40px;
     background-color: #fff;
     color: rgba(38, 107, 38, 0.468);
     font-weight: 600;
-    font-size: 25px;
+    font-size: 2vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,4 +81,20 @@ html,body{
 .bubble:hover{
     cursor: pointer;
     background-color: rgb(18, 171, 18);
+}
+
+
+@media (max-width : 600px) {
+    .elem{
+        font-size: 2vw;
+        gap: 5px;
+    }
+
+    .box{
+        font-size: 5vw;
+    }
+
+    .container{
+        height: 75%;
+    }
 }
