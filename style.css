@@ -95,6 +95,12 @@ html,body{
     }
 
     .container{
-        height: 75%;
+        height: 81%;
+        width: 90%;
+    }
+
+    .container-btm{
+        gap: 5px;
+        padding: 5px 0;
     }
 }
