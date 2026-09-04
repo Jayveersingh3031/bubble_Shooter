@@ -1,50 +1,49 @@
 var timer=60;
-var hitrn=0;
 var score=0;
-function makeBubble(){
-    var clutter="";
+var hit;
 
-    for(var i=1;i<109;i++){
-        rn=Math.floor(Math.random()*10);
-        clutter+=`<div class="bubble">${rn}</div>`;
-    }
-    document.querySelector(".container-btm").innerHTML=clutter;
+function Showscore(){
+    score=score+10;
+    document.querySelector("#score").textContent=score;
 }
 
-makeBubble();
+function Nhit(){
+    hit=Math.floor(Math.random()*10);
+    document.querySelector("#hit").textContent=hit;
+}
 
-function runtimer(){
-   var timeint= setInterval(function(){
+function Ntimer(){
+    setInterval(function(){
         if(timer>0){
             timer--;
-            document.querySelector("#timerval").textContent=timer;
+            document.querySelector("#timer").textContent=timer;
         }
         else{
-            clearInterval(timeint);
-            document.querySelector(".container-btm").innerHTML="<h1>Game Over</h1>";
+            document.querySelector("#game").innerHTML=`<h2>Game Over<br>&nbsp&nbspscore=${score}</h2>`;
         }
     },1000)
 }
 
-runtimer();
-
-function getNewHit(){
-    hitrn=Math.floor(Math.random()*10);
-    document.querySelector("#hitval").textContent=hitrn;
+function show(){
+    var clutter="";
+    for(var i=0;i<90;i++){
+        var rn=Math.floor(Math.random()*10);
+        clutter+=`
+        <div id="bubble">${rn}</div>
+        `
+    }
+    document.querySelector("#game").innerHTML=clutter;
 }
 
-getNewHit();
-
-function increaseScore(){
-    score+=10;
-    document.querySelector("#scoreval").textContent=score;
-}
-
-document.querySelector(".container-btm").addEventListener("click",function(dets){
-    var clickednum =Number(dets.target.textContent);
-    if(clickednum==hitrn){
-        increaseScore();
-        makeBubble();
-        getNewHit();
+document.querySelector("#game").addEventListener("click",function(dets){
+    
+    if(Number(dets.target.textContent)===hit){
+        Nhit();
+        show();
+        Showscore();
     }
 })
+
+show();
+Ntimer();
+Nhit();
